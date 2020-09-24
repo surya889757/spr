@@ -1,0 +1,18 @@
+import RPi.GPIO as GPIO
+import time
+
+P_LED = 21    # adapt to your wiring
+
+def setup():
+    GPIO.setwarnings(False)
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(P_LED,GPIO.OUT)
+    
+setup()
+while True:
+            GPIO.output(P_LED,GPIO.HIGH)
+            time.sleep(1)
+            print('led on')
+            GPIO.output(P_LED,GPIO.LOW)
+            time.sleep(1)
+            print('led off')
